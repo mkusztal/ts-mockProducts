@@ -11,3 +11,5 @@ class UserController extends BaseController<User> {
     return this.usersRepository.findUserByFirstName(firstName);
   }
 }
+
+export default UserController;
