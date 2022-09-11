@@ -1,11 +1,11 @@
-import exprees from 'express';
+import express from 'express';
 import ProductsController from '../controllers/products.controller';
 import { ProductsMockRepository } from '../repositories/products-mock-repository';
 
 const repository = new ProductsMockRepository();
 const controller = new ProductsController(repository);
 
-const router = exprees.Router();
+const router = express.Router();
 
 router.get('', (_, res) => {
   return res.json(controller.getAllItems());
@@ -35,7 +35,7 @@ router.post('', (req, res) => {
   }
 });
 
-router.put('', (req, res) => {
+router.put('/:id', (req, res) => {
   try {
     return res.json(controller.updateItem(req.params.id, req.body));
   } catch (err) {

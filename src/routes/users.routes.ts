@@ -35,7 +35,7 @@ router.post('', (req, res) => {
   }
 });
 
-router.put('', (req, res) => {
+router.put('/:id', (req, res) => {
   try {
     return res.json(controller.updateItem(req.params.id, req.body));
   } catch (err) {
