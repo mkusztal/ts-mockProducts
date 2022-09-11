@@ -6,6 +6,6 @@ export interface Product {
   price: string;
   count: string;
   tags: Array<Tags>;
-  createAt?: Date;
-  updateAt?: Date;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
